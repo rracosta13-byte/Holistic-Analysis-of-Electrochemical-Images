@@ -2,7 +2,7 @@
 % This function takes the clusters that have been sectioned from the
 % variable 'pixel labels' and places each unique cluster into an individual
 % cell. Here it is still possible for a cluster to have multiple objects,
-% they will be separated in another function 'mask_split_objects'
+% they will be separated in another function 'mask_split_objects' 
 %
 % Input 
 % unique_clusters -> number of clusters identified based on color from the
