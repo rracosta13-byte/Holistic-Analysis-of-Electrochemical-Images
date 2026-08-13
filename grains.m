@@ -1,4 +1,4 @@
-%% Grains:
+%% separate_clusters:
 % This function takes the clusters that have been sectioned from the
 % variable 'pixel labels' and places each unique cluster into an individual
 % cell. Here it is still possible for a cluster to have multiple objects,
@@ -16,7 +16,7 @@
 %Code written by: Rudy R. Acosta, University of Arkansas, 08/15/24
 
 
-function G_MASK = grains(unique_clusters, window_labels, RGB_8)
+function G_MASK = separate_clusters(unique_clusters, window_labels, RGB_8)
 % Initialize cell array to store masks
 num_clusters = length(unique_clusters);
 G_MASK = cell(1, num_clusters);
