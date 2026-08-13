@@ -40,7 +40,7 @@
 % 7. **reassign_small_islands**: reassign small (stray objects/pixels 
 %     in each cluster and reassign them to the nearest object in another cluster
 % 8. **movie**: Generates a movie of each current map in dataset as frames.
-% 9. **grains**: Places each unique cluster into a separate cell based on color segmentation.
+% 9. **separate_clusters**: Places each unique cluster into a separate cell based on color segmentation.
 % 10. **RMSD**: Compute the residuals and Root Mean Square Deviation (RMSD) between the original and PCA datasets,
 %    providing insight into reconstruction error.
 % 11. **mask_split_objects**: Refine the segmented grain masks, splitting clusters into
@@ -154,7 +154,7 @@ pixel_labels = imsegkmeans(RGB_2pc,numColors,NumAttempts=3);
 % Get unique cluster labels
 unique_clusters = unique(pixel_labels);
 
-G_MASK = grains(unique_clusters,pixel_labels,RGB_2pc);
+G_MASK = separate_clusters(unique_clusters,pixel_labels,RGB_2pc);
 
 % Iterate over each cell in the G_MASK cell array
 for i = 1:numel(G_MASK)
@@ -180,7 +180,7 @@ window_labels = reassign_small_islands(pixel_labels, maxIslandSize, win);
 % The function 'grains' takes the clusters that have been sectioned from the
 % variable 'window_labels' and places each unique cluster into an individual
 % cell. 
-G_MASK = grains(unique_clusters,window_labels,RGB_2pc);
+G_MASK = separate_clusters(unique_clusters,window_labels,RGB_2pc);
 
 % Iterate over each cell in the G_MASK cell array
 for i = 1:numel(G_MASK)
