@@ -1,4 +1,4 @@
-%% SEGMENT_DATA function:
+%% RESHAPE_DATA function:
 % This function transposes and processes variable 'data', and is called 'A' 
 % It adjusts voltage and current values and identifies where meniscus contact occurs, marked by changes in line numbers.
 %
@@ -33,7 +33,7 @@
 % Code written by: Rudy R. Acosta, University of Arkansas, 08/15/24
 
 
-function [A,SegmentStartIndices,SegmentEndIndices,input_points]  = SEGMENT_DATA(data,VOffset,Curr)
+function [A,SegmentStartIndices,SegmentEndIndices,input_points]  = RESHAPE_DATA(data,VOffset,Curr)
     % % Transpose data 
     A = (data');
 
