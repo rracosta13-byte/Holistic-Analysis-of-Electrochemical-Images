@@ -1,5 +1,5 @@
 %% RESHAPE_DATA function:
-% This function transposes and processes variable 'data', and is called 'A' 
+% This function transposes and processes variable 'data', and is called 'A'
 % It adjusts voltage and current values and identifies where meniscus contact occurs, marked by changes in line numbers.
 %
 % The line numbers in the dataset change whenever the instrument gives a new command, indicating a new segment in the CV scan.
