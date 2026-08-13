@@ -34,7 +34,7 @@
 % 3. **ISO_CV**: Identify the X, Y, and Z coordinates where CV measurements occurred 
 %    and visualize applied potentials of these CVs.
 % 4. **removerows**: Refine the coordinates and current response data by trimming unnecessary points
-%    making current/XY coodrinate data a 3D array, 'XYI'.
+%    making current/XY coordinate data a 3D array, 'XYI'.
 % 5. **extractCycles**: Separate the CV potentials into distinct cycles for further analysis.
 % 6. **PC_image_flatten_data**: Perform PCA on the dataset and visualize the results new RGB images.
 % 7. **reassign_small_islands**: reassign small (stray objects/pixels 
