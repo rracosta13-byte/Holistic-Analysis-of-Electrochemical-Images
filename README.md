@@ -5,3 +5,6 @@ There are 3 different times in this code when running the main script 'electroch
 1) To determine the line numbers for the data. start point is '7' and endpoint is '18' for Figure 5 dataset
 2) To remove rows from image. To have the same dimensions as Figure 5, remove top row '1' and bottom '4' rows.
 3) segmentation of PC colormap into clusters. An input of '5' provides the separation necessary to segment each grain.
+
+This script and accompanying functions will process electrochemical imaging data via PCA and will present all figures present in the work associated with this code.
+
