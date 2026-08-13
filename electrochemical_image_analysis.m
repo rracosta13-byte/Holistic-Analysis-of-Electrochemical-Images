@@ -29,7 +29,7 @@
 % Custom Functions 
 % 1. **import_raw_data**: raw data is imported into this script as a (.tsv)
 %    file, then converted to a (.mat) file for speed
-% 2. **SEGMENT_DATA**: Pre-process the .mat dataset, 'data', by transposing the dataset
+% 2. **RESHAPE_DATA**: Pre-process the .mat dataset, 'data', by transposing the dataset
 %    , and identifying start/end segments of the experiment.
 % 3. **ISO_CV**: Identify the X, Y, and Z coordinates where CV measurements occurred 
 %    and visualize applied potentials of these CVs.
@@ -73,9 +73,9 @@ line_number_increments = 15; % # of line number changes from one start point to 
 % This value can be found in the metadata 
 % (.set) file associated with this dataset - 'Waypoints per hop'
 
-%% Call SEGMENT_DATA function to process the raw dataset and return indices where meniscus contact occurs
+%% Call RESHAPE_DATA function to process the raw dataset and return indices where meniscus contact occurs
 % pop-up menu -> For figdure 5 dataset, startpoint is 7 and endpoint is 18
-[A,SegmentStartIndices,SegmentEndIndices,input_points]  = SEGMENT_DATA(data,VOffset,Curr);
+[A,SegmentStartIndices,SegmentEndIndices,input_points]  = RESHAPE_DATA(data,VOffset,Curr);
 
 %% CAll 'ISO_CV' to create a grid of XY coordinates where CVs took place from the dataset
 startpoint = str2double(input_points{1,1}); % The point where the meniscus makes its initial contact with the substrate (Line number).
