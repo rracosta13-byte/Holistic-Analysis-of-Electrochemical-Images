@@ -1,4 +1,4 @@
-%% mask_split_objects:
+%% grains:
 % This function will recognize if there is more than one object in any of the clusters
 % and will split each object (grain) individually and placed into its own cell 
 %
@@ -11,7 +11,7 @@
 %
 %Code written by: Rudy R. Acosta, Univeristy of Arkansas, 08/15/24
 
-function G_MASK_single_objects = mask_split_objects(G_MASK)
+function G_MASK_single_objects = grains(G_MASK)
 
 G_MASK_single_objects = {};  % Initialize empty cell array to store single object masks
 
