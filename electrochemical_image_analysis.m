@@ -43,7 +43,7 @@
 % 9. **separate_clusters**: Places each unique cluster into a separate cell based on color segmentation.
 % 10. **RMSD**: Compute the residuals and Root Mean Square Deviation (RMSD) between the original and PCA datasets,
 %    providing insight into reconstruction error.
-% 11. **mask_split_objects**: Refine the segmented grain masks, splitting clusters into
+% 11. **grains**: Refine the segmented grain masks, splitting clusters into
 %    individual grains.
 % 12. **grain_avg**: Calculate the average current response across potentials for each grain.
 
@@ -177,7 +177,7 @@ maxIslandSize = 10; % If a object in a cluster has a pixel count smaller than th
 win = 3; % kernel size [win,win]
 window_labels = reassign_small_islands(pixel_labels, maxIslandSize, win);
 
-% The function 'grains' takes the clusters that have been sectioned from the
+% The function 'separate_clusters' takes the clusters that have been sectioned from the
 % variable 'window_labels' and places each unique cluster into an individual
 % cell. 
 G_MASK = separate_clusters(unique_clusters,window_labels,RGB_2pc);
@@ -196,10 +196,10 @@ end
 % Clear variables to free memory
 clear A
 clear data
-%% Splits clusters 'G_MASK' that have more than one object in the cluster 
+%% 'Grains' splits clusters in varible 'G_MASK', that have more than one object in the cluster 
 % into separate cells, so that there is a single cell for each grain
 
-G_MASK_single_objects = mask_split_objects(G_MASK);
+G_MASK_single_objects = grains(G_MASK);
 for grain_number = 1:size(G_MASK_single_objects,2)
 
 figure;
